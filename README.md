@@ -14,4 +14,5 @@ Références :
 
 - <https://www.w3.org/TR/webmidi/>
 - <https://www.ableton.com/en/help/article/using-virtual-MIDI-buses-live/>
+- <https://webaudiodemos.appspot.com/slides/webmidi.html#/>
 
