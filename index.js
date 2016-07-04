@@ -15,19 +15,16 @@ const HALF_VELOCITY = 0x40;
 const FULL_VELOCITY = 0x7f;
 
 function onMIDIInit( midiAccess ) {
+    const ticks = [];
+
+    for (let i = 0; i < 5000; i = i + 500) {
+        ticks.push(i);
+    }
+
     for (var output of midiAccess.outputs.values()) {
-        const now = window.performance.now();
-        const later = now + 1000;
-
-        const ticks = [];
-    
-        for (let i = 0; i < 5000; i = i + 500) {
-            ticks.push(i);
-        }
-
-        output.send([NOTE_ON, C5, FULL_VELOCITY], now);
-        output.send([NOTE_ON, E5, FULL_VELOCITY], now);
-        output.send([NOTE_ON, G5, FULL_VELOCITY], now);
+        output.send([NOTE_ON, C5, FULL_VELOCITY]);
+        output.send([NOTE_ON, E5, FULL_VELOCITY]);
+        output.send([NOTE_ON, G5, FULL_VELOCITY]);
 
         let step = 0;
         ticks.forEach(tick => {
